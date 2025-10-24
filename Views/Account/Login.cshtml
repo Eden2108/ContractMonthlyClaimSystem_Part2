@@ -1,0 +1,33 @@
+﻿@model ContractMonthlyClaimSystem.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5">
+    <!--If the user's already has an account-->
+    <h2>Login</h2>
+    <form method="post" action="/Account/Login" class="mt-3">
+        <div class="mb-3">
+
+            <!--User email-->
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" required />
+        </div>
+
+        <!--A user will enter their password-->
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+    <p class="mt-3">Don’t have an account? <a href="/Account/Register">Register here</a>.</p>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-danger mt-3">@ViewBag.Message</div>
+    }
+</div>

@@ -1,0 +1,114 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+:root {
+    --primary-purple: #8D519B;
+    --dark-purple: #72427D;
+    --secondary-aqua: #4A9C8D;
+    --dark-aqua: #3C8074;
+}
+
+/* Base Body Styling */
+body {
+    background: linear-gradient(to bottom, #f0f8ff, #f2f0ff);
+    color: #333;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: var(--primary-purple);
+    border-color: var(--primary-purple);
+}
+
+    .btn-primary:hover {
+        background-color: var(--dark-purple);
+        border-color: var(--dark-purple);
+    }
+
+.btn-secondary {
+    background-color: var(--secondary-aqua);
+    border-color: var(--secondary-aqua);
+}
+
+    .btn-secondary:hover {
+        background-color: var(--dark-aqua);
+        border-color: var(--dark-aqua);
+    }
+
+/* Home Page Specific Styling */
+.hero-section {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-aqua));
+    color: white;
+    padding: 150px 0;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.features-section {
+    background-color: transparent;
+}
+
+.feature-card {
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+    .feature-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-footer {
+    background-color: var(--secondary-aqua);
+    color: white;
+    padding: 2rem 0;
+}
+
+/* Purple + Aqua Table Theme */
+.table-purple-aqua thead {
+    background: linear-gradient(90deg, #8D519B, #3C8074);
+    color: white;
+}
+
+.table-purple-aqua tbody tr:nth-child(even) {
+    background-color: white;
+}
+
+.table-purple-aqua tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+.table-purple-aqua tbody tr:hover {
+    background-color: white;
+}

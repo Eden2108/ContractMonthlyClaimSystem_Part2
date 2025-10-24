@@ -1,0 +1,81 @@
+﻿@model ContractMonthlyClaimSystem.Models.User
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!--This section enables a lecturer,coordinator or manager to register if they are a first-time user of the system-->
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow-lg border-0 rounded-4" style="width: 420px;">
+        <div class="card-header text-center bg-success text-white rounded-top-4">
+            <h3 class="mb-0">Create Account</h3>
+            <p class="mb-0 small">Join the Monthly Claim System</p>
+        </div>
+
+        <div class="card-body">
+            <!--User name-->
+            <form asp-controller="Account" asp-action="Register" method="post">
+                <div class="mb-3">
+                    <label for="fullName" class="form-label fw-bold">Full Names</label>
+                    <input type="text" id="full_names" name="full_names" class="form-control form-control-lg rounded-3" placeholder="Jane Doe" required>
+                </div>
+
+                <!--User surname-->
+                <div class="mb-3">
+                    <label>Surname</label>
+                    <input asp-for="surname" class="form-control" required />
+                </div>
+
+                <!--User email address-->
+                <div class="mb-3">
+                    <label>Email</label>
+                    <input asp-for="email" type="email" class="form-control" required />
+                </div>
+
+                <!--Role-->
+                <div class="mb-3">
+                    <label for="role" class="form-label fw-bold">Role</label>
+                    <select id="role" name="role" class="form-select form-select-lg rounded-3" required>
+                        <option value="">-- Select Role --</option>
+                        <option value="Lecturer">Lecturer</option>
+                        <option value="Coordinator">Program Coordinator</option>
+                        <option value="Manager">Program Manager</option>
+                    </select>
+                </div>
+
+                <!--Select your gender or what you identify as-->
+                <div class="mb-3">
+                    <label>Gender</label>
+                    <select asp-for="gender" class="form-control" required>
+                        <option value="">-- Select Gender --</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+
+                <!--Create Password-->
+                <div class="mb-3">
+                    <label for="password" class="form-label fw-bold">Password</label>
+                    <input type="password" id="password" name="password" class="form-control form-control-lg rounded-3" placeholder="Create a password" required>
+                </div>
+
+
+                <button type="submit" class="btn btn-success btn-lg w-100 rounded-3">Register</button>
+
+                <div class="text-center mt-3">
+                    <span class="small">Already have an account? </span>
+                    <a asp-controller="Account" asp-action="Login" class="small fw-bold">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-danger text-center mt-3">@ViewBag.Message</div>
+}
+
+
+

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ContractMonthlyClaimSystem.Models.Claim>
+
+<div class="container mt-4">
+    <h2 class="mb-3 text-center">Track Your Claims</h2>
+
+    <table class="table table-striped table-purple-aqua">
+        <thead>
+            <tr>
+                <th>Claim ID</th>
+                <th>Module</th>
+                <th>Faculty</th>
+                <th>Hours</th>
+                <th>Rate</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var claim in Model)
+            {
+                <tr>
+                    <td>@claim.claimID</td>
+                    <td>@claim.module_name</td>
+                    <td>@claim.faculty_name</td>
+                    <td>@claim.number_of_hours</td>
+                    <td>@claim.amount_of_rate</td>
+                    <td>@claim.claim_status</td>
+                    <td>@claim.creating_date.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

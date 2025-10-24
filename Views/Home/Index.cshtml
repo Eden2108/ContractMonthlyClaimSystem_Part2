@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<header class="hero-section text-center text-white">
+    <div class="container-fluid">
+        <h1 class="display-4">Welcome to the Contract Monthly Claim System (CMCS)</h1>
+        <p class="lead">A streamlined platform for lecturers, coordinators, and managers to process monthly claims efficiently.</p>
+        <div>
+            <a class="btn btn-lg btn-primary" asp-controller="Account" asp-action="Register">Register</a>
+            <a class="btn btn-lg btn-success" asp-controller="Account" asp-action="Login">Login</a>
+
+        </div>
+    </div>
+</header>
+
+<section class="features-section text-center py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Lecturer Card -->
+            <div class="col-md-4">
+                <div class="card bg-white text-dark shadow rounded-3 h-100 border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">Lecturers</h3>
+                        <p class="card-text">Submit claims with accurate documentation and complete all required fields.</p>
+                        <div class="mt-auto">
+                            <a asp-controller="Lecturer" asp-action="Index" class="btn btn-primary btn-sm m-1">Submit Claim</a>
+                            <a asp-controller="Lecturer" asp-action="TrackClaim" class="btn btn-success btn-sm">Track Claim</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Coordinator Card -->
+            <div class="col-md-4">
+                <div class="card bg-white text-dark shadow rounded-3 h-100 border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">Program Coordinator</h3>
+                        <p class="card-text">Review and pre-approve submitted claims before manager approval.</p>
+                        <div class="mt-auto">
+                            <a asp-controller="ProgrammeCoordinator" asp-action="Index" class="btn btn-primary btn-sm m-1">Review</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Manager Card -->
+            <div class="col-md-4">
+                <div class="card bg-white text-dark shadow rounded-3 h-100 border-0">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">Program Manager</h3>
+                        <p class="card-text">Finalize claims by approving or rejecting them.</p>
+                        <div class="mt-auto">
+                            <a asp-controller="AcademicManager" asp-action="Index" class="btn btn-success btn-sm">Approve</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Contract Monthly Claims System</h4>
+                <p>Simplifying Claims since 2025</p>
+                <p>&copy; 2025 Contract Monthly Claims System. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
