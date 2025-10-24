@@ -1,23 +1,22 @@
 
----
+
 
 #  Contract Monthly Claim System
 
 ###  Prototype Web Application — Part 2 (.NET Core MVC)
 
----
 
-## 📘 Overview
+##  Overview
 
 The **Contract Monthly Claim System (CMCS)** is a .NET Core MVC web application designed to help **Lecturers, Programme Coordinators, and Academic Managers** efficiently manage, track, and approve teaching claims.
 
 The system provides a secure and user-friendly interface where lecturers can **submit and track claims**, coordinators can **verify** them, and managers can **approve or reject** claims — all connected to a **SQL LocalDB** database for data persistence.
 
----
 
-## 🧩 Features Implemented
 
-### 👩‍🏫 Lecturer Features
+##  Features Implemented
+
+###  Lecturer Features
 
 * Submit claims through a clean, easy-to-use form.
 * Upload supporting documents (PDF, DOCX, XLSX) with file validation and size restrictions (max 5MB).
@@ -36,19 +35,19 @@ The system provides a secure and user-friendly interface where lecturers can **s
 * Approve or reject with confirmation and visual indicators.
 * Automatically update lecturer claim status after approval.
 
-### 📊 Tracking System
+###  Tracking System
 
 * Claim status is dynamically displayed using **Bootstrap badges**:
   🟡 *Pending*, 🟢 *Approved*, 🔴 *Rejected*, 🔵 *Verified*
 * Transparent status flow across all user roles.
 
-### 💾 SQL LocalDB Integration
+###  SQL LocalDB Integration
 
 * Database and tables (`Users`, `Claims`) are automatically created via the `sql_query.cs` model.
 * Uses `System.Data.SqlClient` for direct database connections.
 * Includes schema for relationships between lecturers and their claims.
 
-### 🧠 Unit Testing
+###  Unit Testing
 
 * Unit tests validate calculation logic and claim status updates.
 * Ensures system reliability and correctness.
@@ -61,7 +60,7 @@ The system provides a secure and user-friendly interface where lecturers can **s
 
 ---
 
-## 🧱 Database Setup
+## Database Setup
 
 The `sql_query.cs` model automatically initializes:
 
@@ -101,7 +100,7 @@ The `sql_query.cs` model automatically initializes:
 | creating_date        | DATE         | Submission date               |
 | lecturerID           | INT          | Foreign key referencing Users |
 
----
+
 
 ## 🚀 How to Run the Application
 
@@ -129,34 +128,6 @@ Ensure you have:
    * Coordinator Review
    * Manager Approval
 
----
-
-## 💻 Project Structure
-
-```
-📦 ContractMonthlyClaimSystem
- ┣ 📂 Controllers
- ┃ ┣ HomeController.cs
- ┃ ┣ LecturerController.cs
- ┃ ┣ ProgrammeCoordinatorController.cs
- ┃ ┗ AcademicManagerController.cs
- ┣ 📂 Models
- ┃ ┣ Claim.cs
- ┃ ┗ sql_query.cs
- ┣ 📂 Views
- ┃ ┣ Home
- ┃ ┣ Lecturer
- ┃ ┣ ProgrammeCoordinator
- ┃ ┗ AcademicManager
- ┣ 📂 wwwroot
- ┃ ┣ 📂 css
- ┃ ┣ 📂 js
- ┃ ┗ 📂 uploads
- ┣ 📄 appsettings.json
- ┗ 📄 Program.cs
-```
-
----
 
 ## 🧪 Unit Testing
 
@@ -183,54 +154,6 @@ Test Explorer → Run All Tests
 
 ✅ Expected: All tests pass successfully.
 
----
-
-## 🪶 Lecturer Feedback Summary
-
-| Feedback                               | Implementation                                                   |
-| -------------------------------------- | ---------------------------------------------------------------- |
-| Add ability to upload supporting files | Added `IFormFile` upload functionality in SubmitClaim form       |
-| Improve claim visibility               | Added color-coded status badges                                  |
-| Ensure system reliability              | Added unit tests + exception handling                            |
-| Improve UI                             | Used consistent purple–aqua gradient theme and Bootstrap styling |
-
----
-
-## 📸 Screenshots (Add these in your Word Doc or README)
-
-1. 🏠 **Home Page**
-2. 🧾 **Submit Claim Page**
-3. 📤 **Uploaded Document Confirmation**
-4. 👩‍💼 **Coordinator Verification View**
-5. 👨‍💼 **Manager Approval View**
-6. 📊 **Track Claim Status Table**
-
----
-
 ## 🧭 Version Control (GitHub)
 
 **Repository Name:** `ContractMonthlyClaimSystem`
-
-**Commit Examples:**
-
-| Commit Message                                | Description                 |
-| --------------------------------------------- | --------------------------- |
-| `Initial commit - setup project structure`    | Base .NET MVC setup         |
-| `Added SQL initialization and LocalDB tables` | Implemented `sql_query.cs`  |
-| `Created Lecturer Claim submission form`      | Added `SubmitClaim.cshtml`  |
-| `Implemented file upload and tracking system` | Enhanced Lecturer features  |
-| `Added unit testing and documentation`        | Completed Part 2 submission |
-
----
-
-## 🏁 Final Notes
-
-* Fully functional MVC web prototype
-* Uses **SQL LocalDB** for real data storage
-* Error-resilient and visually consistent
-* Tested and ready for **presentation/demo**
-
----
-
-Would you like me to format this into a **Word (.docx)** version too,
-so you can include it directly in your Part 2 submission folder with your screenshots and lecturer feedback?
